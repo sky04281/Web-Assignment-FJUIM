@@ -1,25 +1,27 @@
-<!DOCTYPE html>
+<?php
+  if(!empty($_GET['butt'])){
+    $account = $_GET['account'];
+    $password = $_GET['password'];
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
+    $link = mysqli_connect('localhost','root','12345678','ImDepartment');
+    $sql = "select * from account where account = '$account' && password = '$password'";
+    $result = mysqli_query($link,$sql);
+    if($row=mysqli_fetch_array($result)){
+      if($account==$row['account']&&$password==$row['password']){
+        header("Location:im_mess.php?message=登入成功");
+      }
+    }else{
+      header("Location:im_mess.php?message=登入失敗");
+    }
+  }  
+?>
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
   <meta name="author" content="themefisher.com">
 
-  <title>註冊-歡迎加入</title>
-  <script type="text/javascript">
-    function show_alert()
-    {
-    alert("註冊成功")
-    }
-    </script>
+  <title>登入–歡迎回來</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -76,7 +78,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="block text-center">
-                <h1 class="text-capitalize mb-5 text-lg">歡迎加入</h1>
+                <h1 class="text-capitalize mb-5 text-lg">歡迎回來</h1>
       
                 <ul class="list-inline breadcumb-nav">
                   
@@ -91,51 +93,31 @@
   <div class="container">
     <div class="row">
       <div style="width:60% ; margin: 30%; margin-top: 0px ; height: auto;margin-left: 33%;  margin-bottom: 0px;">
-        <span class="text-color">註冊</span>
-        <h3 class="text-md mb-5">歡迎加入我們</h3>
+        <span class="text-color">登入</span>
+        <h3 class="text-md mb-5">請輸入帳號密碼</h3>
 
-        <div >
-          <div >
-            <form id="contact-form" method="post">
+        <div weight="100%" height="30%">
+          <div weight="100%">
+            <form id="contact-form" action="im_login.php" weidth="30%" method="get">
               <!-- form message -->
               <div class="row">
                 <div class="col-12">
-                    <!---
-                  <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                    註冊成功
-                  </div>
-                -->
+                  
                 </div>
               </div>
 
               <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1" placeholder="你是...">
-                  <option>請選擇性別</option>
-                  <option>男生</option>
-                  <option>女生</option>
-                  <option>其他</option>
-                  <option>情況很複雜</option>
-                
-                </select>
+                <input name="account" type="text" class="form-control" placeholder="帳號" required>
               </div>
 
               <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的姓名">
+                <input name="password" type="password" class="form-control" placeholder="密碼" required>
               </div>
 
-              <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的帳號">
-              </div>
-
-              <div class="form-group">
-                <input name="name" id="name" type="text" class="form-control" placeholder="你的密碼">
-              </div>
-
-              <button class="btn btn-main" name="submit" type="submit" onclick="show_alert()">註冊</button>
-              
+              <input class="btn btn-main" type="submit" name="butt" value="login">
+              <a href="im_register.php" class="btn btn-solid-border">register</a>
             </form>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,19 +1,41 @@
-<!DOCTYPE html>
+<?php
+  if(!empty($_GET['butt'])){
+    $Rname = $_GET['Rname'];
+    $account = $_GET['account'];
+    $password = $_GET['password'];
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
+    $link = mysqli_connect('localhost','root','12345678','ImDepartment');
+    $sql1 = "select * from account";
+    $result1 = mysqli_query($link,$sql1);
+    $times=0;
+    while($row = mysqli_fetch_array($result1)){
+      if($row['account']==$account){
+        $times=$times+1;
+      }
+    }
+    if($times>0){
+      header("Location:im_mess.php?message=您輸入的帳號已有人註冊過");
+    }else{
+      $sql = "insert into account (name, account, password) values ('$Rname','$account','$password')";
+      $result = mysqli_query($link,$sql);
+      header("Location:im_mess.php?message=註冊成功");
+    }
+    
+  }
+?>
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
   <meta name="author" content="themefisher.com">
 
-  <title>登入–歡迎回來</title>
+  <title>註冊-歡迎加入</title>
+  <script type="text/javascript">
+    function show_alert()
+    {
+    alert("註冊成功")
+    }
+    </script>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -70,7 +92,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="block text-center">
-                <h1 class="text-capitalize mb-5 text-lg">歡迎回來</h1>
+                <h1 class="text-capitalize mb-5 text-lg">歡迎加入</h1>
       
                 <ul class="list-inline breadcumb-nav">
                   
@@ -85,41 +107,54 @@
   <div class="container">
     <div class="row">
       <div style="width:60% ; margin: 30%; margin-top: 0px ; height: auto;margin-left: 33%;  margin-bottom: 0px;">
-        <span class="text-color">登入</span>
-        <h3 class="text-md mb-5">請輸入帳號密碼</h3>
+        <span class="text-color">註冊</span>
+        <h3 class="text-md mb-5">歡迎加入我們</h3>
 
-        <div weight="100%" height="30%">
-          <div weight="100%">
-            <form id="contact-form" weidth="30%" method="post">
+        <div >
+          <div >
+          <form id="contact-form" method="get">
               <!-- form message -->
               <div class="row">
                 <div class="col-12">
-                  
+                    <!---
+                  <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                    註冊成功
+                  </div>
+                -->
                 </div>
               </div>
 
               <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="帳號">
+                <select class="form-control" id="exampleFormControlSelect1" placeholder="你是...">
+                  <option>請選擇性別</option>
+                  <option>男生</option>
+                  <option>女生</option>
+                  <option>其他</option>
+                  <option>情況很複雜</option>
+                
+                </select>
+              </div>
+            <form method="get" action="im_register.php">
+              <div class="form-group">
+                <input name="Rname" type="text" class="form-control" placeholder="姓名" required>
               </div>
 
               <div class="form-group">
-                <input name="name" id="name" type="text" class="form-control" placeholder="密碼">
+                <input name="account" type="text" class="form-control" placeholder="帳號" required>
               </div>
 
-              <button class="btn btn-main" name="submit" type="submit">登入</button>
-              <a href="im_register.html" class="btn btn-solid-border">註冊</a>
+              <div class="form-group">
+                <input name="password" type="text" class="form-control" placeholder="密碼" required>
+              </div>
+
+              <input class="btn btn-main" type="submit" name="butt" value="register">
             </form>
+          </form>
           </div>
 
         </div>
       </div>
     </div>
-
-    
-
-    
-
-         
     </div>
   </div>
 </section>
