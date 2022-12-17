@@ -1,6 +1,6 @@
 <?php
   if(!empty($_GET['butt'])){
-    $Rname = $_GET['Rname'];
+    $Rname = $_GET['name'];
     $account = $_GET['account'];
     $password = $_GET['password'];
 
@@ -16,7 +16,7 @@
     if($times>0){
       header("Location:im_mess.php?message=您輸入的帳號已有人註冊過");
     }else{
-      $sql = "insert into account (name, account, password) values ('$Rname','$account','$password')";
+      $sql = "insert into account (name, account, password) values ('$name','$account','$password')";
       $result = mysqli_query($link,$sql);
       header("Location:im_mess.php?message=註冊成功");
     }
@@ -136,7 +136,7 @@
               </div>
             <form method="get" action="im_register.php">
               <div class="form-group">
-                <input name="Rname" type="text" class="form-control" placeholder="姓名" required>
+                <input name="name" type="text" class="form-control" placeholder="姓名" required>
               </div>
 
               <div class="form-group">

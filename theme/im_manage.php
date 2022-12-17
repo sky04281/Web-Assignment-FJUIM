@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
   <meta name="author" content="themefisher.com">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="orbitor" />
 
-  <title>Orbitor - Software Company Template</title>
+  <title>帳號管理平台</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -24,92 +28,72 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <!--BS icon-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 </head>
-
+ 
 <body>
 
-
-<nav class="navbar navbar-expand-lg  py-4 navigation header-padding nav-text-white" id="navbar">
+	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
 		<div class="container-fluid">
-	  
 		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
 			<ul class="navbar-nav m-left">
 			  <li class="nav-item active">
-				<a class="nav-link" href="im_index.html">首頁<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="im_manage.php">帳號管理<span class="sr-only">(current)</span></a>
 			  </li>
-			   
-			    
-			   
-                <li class="nav-item"><a class="nav-link" href="im_reservation.html">預約系統</a></li>
-                <li class="nav-item"><a class="nav-link" href="im_calander.html">行事曆</a></li>
-			
-				<li class="nav-item"><a class="nav-link" href="im_announcement.html">最新公告</a></li>
+			   <li class="nav-item"><a class="nav-link" href="im_reservation.html">預約系統</a></li>
+			   <li class="nav-item"><a class="nav-link" href="im_calander.html">時段系統</a></li>
+					
+			    <li class="nav-item"><a class="nav-link" href="im_announcement.html">行事曆</a></li>
 
-				
-			
-			  	
-			   <li class="nav-item"><a class="nav-link" href="im_contact.html">關於我們</a></li>
+			   <li class="nav-item"><a class="nav-link" href="im_contact.html">留言系統</a></li>
 			</ul>
-
-			
 		  </div>
+		  <a href="im_login.php" class="btn btn-solid-border d-none d-lg-block">新增帳號<i class="fa fa-angle-right ml-2"></i></a>
 		</div>
 	</nav>
-
-
-<section class="page-title bg-1">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block text-center">
-          <h1 class="text-capitalize mb-5 text-lg">系學會網頁</h1>
-
-          <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="im_index.html" class="text-white">首頁</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="im_announcement.html" class="text-white">公告</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- section portfolio start -->
-<section class="section portfolio">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-8">
-				<div class="heading text-center">
-					<h3 class="mb-4"><?php echo $_GET["message"]; ?></h2>
-                    <?php
-                    if($_GET['message']=="帳號或密碼錯誤"){
-                    ?>
-                        <a href="im_login.php" class="btn btn-solid-border">重新登入</a>
-                    <?php
-                    }else if($_GET['message']=="註冊成功"){
-                    ?>
-                        <a href="im_login.php" class="btn btn-solid-border">登入</a>
-                    <?php
-                    }else if($_GET['message']=="您輸入的帳號已有人註冊過"){
-                    ?>
-                        <a href="im_register.php" class="btn btn-solid-border">重新註冊</a>
-                    <?php
+    <section class="section blog-wrap" style="margin-top:25px">
+        <div class="container">
+            <div align="center">	
+                <form method=get action="im_manage.php">
+                    <input type="text" name=searchtxt placeholder="Search...">
+                    <input class="btn btn-main" type="submit" name="butt" value="search">
+                </form>   
+                <table width=500 cellpadding="3">
+                  <caption><tr><td>姓名</td><td>帳號</td><td>功能</td></tr></caption>
+                  <?php
+                    if(!empty($_GET['butt'])){
+                      $searchtxt = $_GET['searchtxt'];
+                      $link = mysqli_connect('localhost','root','12345678','imdepartment');
+                      if(empty($searchtxt)){
+                        $sql  = "select * from account";
+                        $result = mysqli_query($link,$sql);
+                        While($row=mysqli_fetch_assoc($result)){
+                          echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=update.php?name=", $row['name'], ">[修改]</a><a href=delete.php?name=", $row['name'], ">[刪除]</a></td></tr>";
+                        }
+                      }else if(!empty($searchtxt)){
+                        $sql  = "select * from account where name like '%$searchtxt%'";
+                        $result = mysqli_query($link,$sql);
+                        While($row=mysqli_fetch_assoc($result)){
+                          echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=update.php?name=", $row['name'], ">[修改]</a><a href=delete.php?name=", $row['name'], ">[刪除]</a></td></tr>";
+                        }
+                      }
                     }else{
-                    ?>
-                        <a href="im_index.html" class="btn btn-solid-border">回首頁</a>
-                    <?php
+                      $link = mysqli_connect('localhost','root','12345678','imdepartment');
+                      $sql  = "select * from account";
+                      $result = mysqli_query($link,$sql);
+                      While($row=mysqli_fetch_assoc($result)){
+                        echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=im_update.php?name=", $row['name'], ">[修改]</a><a href=delete.php?name=", $row['name'], ">[刪除]</a></td></tr>";
+                      }
                     }
-                    ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- section portfolio END -->
-
+                  ?>
+                </table>
+            </div>
+        </div>    
+    </section>
+</body>
+<!-- footer Start -->
 <footer class="footer section">
 	<div class="container">
 		<div class="row">
@@ -185,6 +169,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
     
     <script src="js/script.js"></script>
+	
 
   </body>
   </html>
