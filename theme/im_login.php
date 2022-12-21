@@ -3,7 +3,7 @@
     $account = $_GET['account'];
     $password = $_GET['password'];
 
-    $link = mysqli_connect('localhost','root','12345678','ImDepartment');
+    $link = mysqli_connect('localhost','root','12345678','imdepartment');
     $sql = "select * from account where account = '$account' && password = '$password'";
     $result = mysqli_query($link,$sql);
     if($row=mysqli_fetch_array($result)){

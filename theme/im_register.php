@@ -1,10 +1,10 @@
 <?php
   if(!empty($_GET['butt'])){
-    $Rname = $_GET['name'];
+    $name = $_GET['name'];
     $account = $_GET['account'];
     $password = $_GET['password'];
 
-    $link = mysqli_connect('localhost','root','12345678','ImDepartment');
+    $link = mysqli_connect('localhost','root','12345678','imdepartment');
     $sql1 = "select * from account";
     $result1 = mysqli_query($link,$sql1);
     $times=0;
@@ -20,7 +20,7 @@
       $result = mysqli_query($link,$sql);
       header("Location:im_mess.php?message=註冊成功");
     }
-    
+
   }
 ?>
 <html lang="zxx">

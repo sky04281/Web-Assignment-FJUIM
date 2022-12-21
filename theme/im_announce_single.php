@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+<?php
+	if(!empty($_GET['butt'])){
+		$num = $_GET['num'];
+		$user = $_GET['user'];
+		$department = $_GET['department'];
+		$message = $_GET['message'];
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
+		$link = mysqli_connect('localhost','root','12345678','imdepartment');
+		$mes_sql = "insert into comment (user, department, message, num) values ('$user', '$department', '$message', '$num')";
+		$mes_rs = mysqli_query($link,$mes_sql);
+	}
+?>
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -108,6 +111,9 @@
 					}else if(isset($_GET['num'])){
 						$num = $_GET['num'];
 						$sql = "select * from announcement where num = '$num'";
+						$mesql = "select * from comment where num = '$num'";
+						$mesrs = mysqli_query($link,$mesql);
+						$mescount = mysqli_num_rows($mesrs);
 						$result = mysqli_query($link,$sql);
 						if($row = mysqli_fetch_array($result)){
 							$title = $row['title'];
@@ -119,7 +125,7 @@
 				?>
 				<h2 class="mt-3 mb-3 text-md"><?php echo $title ?></h2>
 				<div class="blog-item-meta mb-5">
-					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>2 則留言</span>
+					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i><?php echo $mescount ?> 則留言</span>
 					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"><?php echo $date ?></i></span>
 					
 				</div>	
@@ -175,65 +181,68 @@
 		</div>
 	</div>
 
+	<?php
+		if($mescount!=0){
+	?>
 	<div class="col-lg-12">
 		<div class="comment-area mt-4 mb-5">
 			<h4 class="mb-4">留言</h4>
 			<ul class="comment-tree list-unstyled">
-				<li class="mb-5">
+				<?php
+					$com_sql = "select * from comment where num = '$num'";
+					$com_rs = mysqli_query($link,$com_sql);
+					while($row_com = mysqli_fetch_array($com_rs))
+					{
+					$user = $row_com['user'];
+					$datetime = $row_com['datetime'];
+					$message = $row_com['message'];
+					$department = $row_com['department'];
+				?>
+				<li class="mb-5">	
 					<div class="comment-area-box">
-						
-
 						<div class="comment-info">
-							<h5 class="mb-1">John</h5>
-							<span>United Kingdom</span>
-							<span class="date-comm">| Posted October 7, 2018</span>
+							<h5 class="mb-1"><?php echo $user ?></h5>
+							<span><?php echo $department ?></span>
+							<span class="date-comm">&emsp;|&emsp;<?php echo $datetime ?></span>
 						</div>
 
 						<div class="comment-content mt-3">
-							<p>Some consultants are employed indirectly by the client via a consultancy staffing company, a company that provides consultants on an agency basis. </p>
+							<p><?php echo $message ?></p>
 						</div>
 					</div>
 				</li>
-
-				<li>
-					<div class="comment-area-box">
-						
-
-						<div class="comment-info">
-							<h5 class="mb-1">Philip W</h5>
-							<span>United Kingdom</span>
-							<span class="date-comm">| Posted October 7, 2018</span>
-						</div>
-
-						<div class="comment-content mt-3">
-							<p>Some consultants are employed indirectly by the client via a consultancy staffing company, a company that provides consultants on an agency basis. </p>
-						</div>
-					</div>
-				</li>
+				<?php
+					}
+				?>
 			</ul>
+			
 		</div>
 	</div>
+	<?php
+		}
+	?>
 
 	<div class="col-lg-12">
-		<form class="comment-form mt-5" id="comment-form">
+		<form class="comment-form mt-5" id="comment-form" action="im_announce_single.php" method="get">
+			<input type=hidden name="num" value="<?php echo $num ?>">
 			<h4 class="mb-4">寫點東西...</h4>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">		
-						<font class="form-control">姓名</font>
+					<input class="form-control" type="text" name="user" placeholder="姓名:" required>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<input class="form-control" type="text" name="mail" id="mail" placeholder="系級:">
+						<input class="form-control" type="text" name="department" placeholder="系級:" required>
 					</div>
 				</div>
 			</div>
 
 
-			<textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder="內容"></textarea>
+			<textarea class="form-control mb-4" name="message" cols="30" rows="5" placeholder="內容"></textarea>
 
-			<input class="btn btn-main" type="submit" name="submit-contact" id="submit_contact" value="留言">
+			<input class="btn btn-main" type="submit" name="butt" value="留言">
 		</form>
 	</div>
 </div>
