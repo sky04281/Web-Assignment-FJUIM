@@ -88,105 +88,37 @@
     <div class="row">
       <div class="col-lg-8">
         <div style="width:80%; margin-left: 20%;">
-	<div class="col-lg-12 col-md-12 mb-5">
+		<?php
+			$link = mysqli_connect('localhost','root','12345678','imdepartment');
+			$sql = "select * from announcement";
+			$result = mysqli_query($link,$sql);
+			while($row = mysqli_fetch_array($result)){
+				$num = $row['num'];
+				$title = $row['title'];
+				$short = $row['short'];
+				$date = $row['date'];
+		?>
+	<div class="col-lg-12 col-md-12 mb-5">	
 		<div class="blog-item">
 			<div class="blog-item-content">
-				<h3 class="mt-3 mb-3"><a href="im_announce_single.html">標題</a></h3>
-
+				<h3 class="mt-3 mb-3"><?php echo $title ?></h3>
 				<div class="blog-item-meta mb-3">
 					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>留言數</span>
-					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> 發布日期</span>
+					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i><?php echo $date ?></span>
 				</div> 
 
-				
-				<p class="mb-4">這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述</p>
+				<p class="mb-4"><?php echo $short ?></p>
 
-				<a href="im_announce_single.html" class="btn btn-small btn-main ">了解更多</a>
+				<input type="button" name="button" value="了解更多" onclick="window.location.href='im_announce_single.php?num=<?php echo $num ?>'" class="btn btn-small btn-main ">
 				<a href="" class="btn btn-solid-border">編輯</a>
 				<a href="" class="btn btn-solid-border">刪除</a>
+				
 			</div>
 		</div>
 	</div>
-
-	<div class="col-lg-12 col-md-12 mb-5">
-		<div class="blog-item">
-			<div class="blog-item-content">
-				<h3 class="mt-3 mb-3"><a href="im_announce_single.html">標題</a></h3>
-
-				<div class="blog-item-meta mb-3">
-					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>留言數</span>
-					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> 發布日期</span>
-				</div> 
-
-				
-				<p class="mb-4">這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述</p>
-
-				<a href="im_announce_single.html" class="btn btn-small btn-main ">了解更多</a>
-				<a href="" class="btn btn-solid-border">編輯</a>
-				<a href="" class="btn btn-solid-border">刪除</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-12 col-md-12 mb-5">
-		<div class="blog-item">
-			<div class="blog-item-content">
-				<h3 class="mt-3 mb-3"><a href="im_announce_single.html">標題</a></h3>
-
-				<div class="blog-item-meta mb-3">
-					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>留言數</span>
-					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> 發布日期</span>
-				</div> 
-
-				
-				<p class="mb-4">這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述</p>
-
-				<a href="im_announce_single.html" class="btn btn-small btn-main ">了解更多</a>
-				<a href="" class="btn btn-solid-border">編輯</a>
-				<a href="" class="btn btn-solid-border">刪除</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-12 col-md-12 mb-5">
-		<div class="blog-item">
-			<div class="blog-item-content">
-				<h3 class="mt-3 mb-3"><a href="im_announce_single.html">標題</a></h3>
-
-				<div class="blog-item-meta mb-3">
-					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>留言數</span>
-					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> 發布日期</span>
-				</div> 
-
-				
-				<p class="mb-4">這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述</p>
-
-				<a href="im_announce_single.html" class="btn btn-small btn-main ">了解更多</a>
-				<a href="" class="btn btn-solid-border">編輯</a>
-				<a href="" class="btn btn-solid-border">刪除</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-12 col-md-12 mb-5">
-		<div class="blog-item">
-			<div class="blog-item-content">
-				<h3 class="mt-3 mb-3"><a href="im_announce_single.html">標題</a></h3>
-
-				<div class="blog-item-meta mb-3">
-					<span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>留言數</span>
-					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> 發布日期</span>
-				</div> 
-
-				
-				<p class="mb-4">這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述這一句話是關於文章內容的簡單敘述</p>
-
-				<a href="im_announce_single.html" class="btn btn-small btn-main ">了解更多</a>
-				<a href="" class="btn btn-solid-border">編輯</a>
-				<a href="" class="btn btn-solid-border">刪除</a>
-			</div>
-		</div>
-	</div>
+	<?php
+		}
+	?>
 </div>
       </div>
       <div class="col-lg-4">

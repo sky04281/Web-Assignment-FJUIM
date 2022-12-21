@@ -89,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>帳號</td>
-                        <td><font color = red><?php echo $account;?></font></td>
+                        <td><font color = red><?php echo $account; ?></font></td>
                         <input type = hidden name = "account" value = "<?php echo $account ?>">
                     </tr>
                     <tr>
@@ -99,14 +99,14 @@
                     <tr>
                         <td>權限資格&emsp;</td>
                         <td><input type = text name = "membership" value = "<?php echo $membership; ?>" class="form-control"></td>
-                        <!-- <php if($membership == 1){?>
+                        <!-- <?php if($membership == 1){ ?>
                             <td>權限資格&emsp;</td>
-                            <td><input type = text name = "membership" value = "<php echo $membership; ?>" class="form-control"></td>
-                        <php }else if($membership == 0){?>
+                            <td><input type = "text" name = "membership" value = "<?php echo $membership; ?>" class="form-control"></td>
+                        <?php }else if($membership == -1){ ?>
                             <td>權限資格&emsp;</td>
-                            !-- <td><font color = red><php echo $membership;></font></td>
-                            input type = hidden name = "membership" value = "<php echo $membership >">
-                        <php }?>可用在個人修改密碼部分-->
+                            <td><font color = red><?php echo $membership; ?></font></td>
+                            <input type = hidden name = "membership" value = "<?php echo $membership ?>">
+                         <?php } ?>可用在個人修改密碼部分 -->
                     </tr>
                     <tr>
                         <td></td>

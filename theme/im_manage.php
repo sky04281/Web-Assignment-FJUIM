@@ -47,7 +47,7 @@
 					
 			    <li class="nav-item"><a class="nav-link" href="im_announcement.html">行事曆</a></li>
 
-			   <li class="nav-item"><a class="nav-link" href="im_contact.html">留言系統</a></li>
+			   <li class="nav-item"><a class="nav-link" href="im_announcement.php">留言系統</a></li>
 			</ul>
 		  </div>
 		  <a href="im_login.php" class="btn btn-solid-border d-none d-lg-block">新增帳號<i class="fa fa-angle-right ml-2"></i></a>
