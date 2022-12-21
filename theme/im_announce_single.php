@@ -132,8 +132,8 @@
 
 	<div class="col-lg-12 mb-5">
 		<div class="posts-nav bg-gray p-5 d-lg-flex d-md-flex justify-content-between ">
-			<div class="posts-prev-item mb-4 mb-lg-0">
-				<span class="nav-posts-desc">上一篇公告</span>
+			<div class="posts-prev-item mb-4 mb-lg-0" style="padding: 0 70px;">
+				<!-- <span class="nav-posts-desc">上一篇公告</span> -->
 				<h6 class="nav-posts-title mt-1">
 					<?php
 						$one = 1;
@@ -161,15 +161,15 @@
 							$next_title =$row_next['title'];
 						}
 					?>
-					<a href="im_announce_single.php?num=<?php echo $previous ?>"><?php echo $pre_title ?></a>
+					<a href="im_announce_single.php?num=<?php echo $previous ?>"><b>←上一篇公告</b></a>
 				</h6>
 			</div>
 			<div class="border"></div>
 
-			<div class="posts-next-item pt-4 pt-lg-0">
-				<span class="nav-posts-desc text-lg-right text-md-right d-block">下一篇公告</span>
+			<div class="posts-next-item pt-4 pt-lg-0" style="padding: 0 80px;">
+				<!-- <span class="nav-posts-desc text-lg-right text-md-right d-block">下一篇公告</span> -->
 				<h6 class="nav-posts-title mt-1">
-					<a href="im_announce_single.php?num=<?php echo $next ?>"><?php echo $next_title ?></a>
+					<a href="im_announce_single.php?num=<?php echo $next ?>"><b>下一篇公告→</b></a>
 				</h6>
 			</div>
 		</div>
@@ -220,7 +220,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">		
-						<input class="form-control" type="text" name="name" id="name" placeholder="姓名:">
+						<font class="form-control">姓名</font>
 					</div>
 				</div>
 				<div class="col-md-6">
