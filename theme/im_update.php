@@ -45,24 +45,9 @@
  
 <body>
 
-	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
-		<div class="container-fluid">
-		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
-			<ul class="navbar-nav m-left">
-			  <li class="nav-item active">
-				<a class="nav-link" href="im_manage.php">帳號管理<span class="sr-only">(current)</span></a>
-			  </li>
-			   <li class="nav-item"><a class="nav-link" href="im_reservation.html">預約系統</a></li>
-			   <li class="nav-item"><a class="nav-link" href="im_calander.html">時段系統</a></li>
-					
-			    <li class="nav-item"><a class="nav-link" href="im_announcement.html">行事曆</a></li>
-
-			   <li class="nav-item"><a class="nav-link" href="im_contact.html">留言系統</a></li>
-			</ul>
-		  </div>
-		  <a href="im_login.php" class="btn btn-solid-border d-none d-lg-block">新增帳號<i class="fa fa-angle-right ml-2"></i></a>
-		</div>
-	</nav>
+	<!-- header -->
+	<?php include("header.php");?>
+    
     <section class="section blog-wrap" style="margin-top:50px">
         <div class="container">
             <div align="center">	

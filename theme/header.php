@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
+<nav class="navbar navbar-expand-lg py-4 navigation header-padding nav-text-white" id="navbar">
     <div class="container-fluid">
         <div class="collapse navbar-collapse text-center" id="navbarsExample09">
             <ul class="navbar-nav m-left">

@@ -60,31 +60,8 @@
 <body>
 
 
-	<nav class="navbar navbar-expand-lg  py-4 navigation header-padding nav-text-white" id="navbar">
-		<div class="container-fluid">
-	  
-		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
-			<ul class="navbar-nav m-left">
-			  <li class="nav-item active">
-				<a class="nav-link" href="im_index.html">首頁<span class="sr-only">(current)</span></a>
-			  </li>
-			   
-			    
-			   
-                <li class="nav-item"><a class="nav-link" href="im_reservation.html">預約系統</a></li>
-                <li class="nav-item"><a class="nav-link" href="im_calander.html">行事曆</a></li>
-			
-				<li class="nav-item"><a class="nav-link" href="im_announcement.html">最新公告</a></li>
-
-				
-			
-			  	
-			   <li class="nav-item"><a class="nav-link" href="im_contact.html">關於我們</a></li>
-			</ul>
-
-			
-		  
-	</nav>
+	<!-- header -->
+	<?php include("header.php");?>
 
 
     <section class="page-title bg-1">
