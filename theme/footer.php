@@ -15,10 +15,10 @@
 					</h4>
 
 					<ul class="list-unstyled footer-menu lh-35" >
-						<li><a href="im_reservation.html">預約系統</a></li>
-						<li><a href="im_calander.html">行事曆</a></li>
-						<li><a href="im_announcement.html">最新公告</a></li>
-						<li><a href="im_contact.html">關於我們</a></li>
+						<li><a href="im_reservation.php">預約系統</a></li>
+						<li><a href="im_calander.php">行事曆</a></li>
+						<li><a href="im_announcement.php">最新公告</a></li>
+						<li><a href="im_contact.php">關於我們</a></li>
 					</ul>
 				</div>
 			</div>
