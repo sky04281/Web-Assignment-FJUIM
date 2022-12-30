@@ -28,7 +28,7 @@
 </tr>
 <tr>
   <td align=right bgcolor=#C6D7E7>
-      | <a href="im_index.html">回首頁</a> |
+      | <a href="im_index.php">回首頁</a> |
   </td>
 </tr>
 </table>

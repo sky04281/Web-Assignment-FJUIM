@@ -73,7 +73,7 @@
 		<div class="row ">
 			<div class="col-lg-4 col-md-6">
 				<div class="portflio-item position-relative mb-4">
-					<a href="im_reservation_majang.html">
+					<a href="im_reservation_majang.php">
 						<img src="images/portfolio/mahjong.jpg" alt="" class="img-fluid w-100">
 						<div class="overlay-item"><i class="ti-link"></i></div>	
 						
@@ -87,7 +87,7 @@
 
 			<div class="col-lg-4 col-md-6">
 				<div class="portflio-item position-relative mb-4">
-					<a href="im_reservation_cabinet.html">
+					<a href="im_reservation_cabinet.php">
 						<img src="images/portfolio/lockers.jpg" alt="" class="img-fluid w-100">
 						<div class="overlay-item">
 							<i class="ti-link"></i>
@@ -102,7 +102,7 @@
 
 			<div class="col-lg-4 col-md-6">
 				<div class="portflio-item position-relative mb-4">
-					<a href="im_reservation_sofa.html">
+					<a href="im_reservation_sofa.php">
 						<img src="images/portfolio/sofa.jpg" alt="" class="img-fluid w-100">
 
 						<div class="overlay-item">

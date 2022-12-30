@@ -101,10 +101,10 @@
 	<div class="sidebar-widget tags mb-3">
 		<h5 class="mb-4">捷徑</h5>
 
-		<a href="im_index.html">首頁</a><br>
-		<a href="im_reservation.html">預約系統</a><br>
-		<a href="im_calander.html">行事曆</a><br>
-		<a href="im_contact.html">關於我們</a><br>
+		<a href="im_index.php">首頁</a><br>
+		<a href="im_reservation.php">預約系統</a><br>
+		<a href="im_calander.php">行事曆</a><br>
+		<a href="im_contact.php">關於我們</a><br>
 	</div>
 
 </div>

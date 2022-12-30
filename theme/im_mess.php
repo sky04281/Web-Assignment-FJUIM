@@ -42,9 +42,9 @@
           <h1 class="text-capitalize mb-5 text-lg">系學會網頁</h1>
 
           <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="im_index.html" class="text-white">首頁</a></li>
+            <li class="list-inline-item"><a href="im_index.php" class="text-white">首頁</a></li>
             <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="im_announcement.html" class="text-white">公告</a></li>
+            <li class="list-inline-item"><a href="im_announcement.php" class="text-white">公告</a></li>
           </ul>
         </div>
       </div>
@@ -74,7 +74,7 @@
                     <?php
                     }else{
                     ?>
-                        <a href="im_index.html" class="btn btn-solid-border">回首頁</a>
+                        <a href="im_index.php" class="btn btn-solid-border">回首頁</a>
                     <?php
                     }
                     ?>
