@@ -13,7 +13,7 @@
   <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
   <meta name="author" content="themefisher.com">
 
-  <title>貼文</title>
+  <title>預約麻將</title>
   <script type="text/javascript">
     function show_alert()
     {
@@ -44,33 +44,8 @@
 <body>
 
 
-	<nav class="navbar navbar-expand-lg  py-4 navigation header-padding nav-text-white" id="navbar">
-		<div class="container-fluid">
-	  
-		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
-			<ul class="navbar-nav m-left">
-			  <li class="nav-item active">
-				<a class="nav-link" href="im_index.html">首頁<span class="sr-only">(current)</span></a>
-			  </li>
-			   
-			    
-			   
-                <li class="nav-item"><a class="nav-link" href="im_reservation.html">預約系統</a></li>
-                <li class="nav-item"><a class="nav-link" href="im_calander.html">行事曆</a></li>
-			
-				<li class="nav-item"><a class="nav-link" href="im_announcement.html">最新公告</a></li>
-
-				
-			
-			  	
-			   <li class="nav-item"><a class="nav-link" href="im_contact.html">關於我們</a></li>
-			</ul>
-
-			
-		  </div>
-          <a href="im_login.html" class="btn btn-solid-white d-none d-lg-block">登入 <i class="fa fa-angle-right ml-2"></i></a>
-		</div>
-	</nav>
+	<!-- header -->
+	<?php include("header.php");?>
 
 
     <section class="page-title bg-1">
@@ -78,7 +53,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="block text-center">
-                <h1 class="text-capitalize mb-5 text-lg">編輯你的貼文</h1>
+                <h1 class="text-capitalize mb-5 text-lg">預約麻將</h1>
       
                 <ul class="list-inline breadcumb-nav">
                   
@@ -93,12 +68,12 @@
   <div class="container">
     <div class="row">
       <div style="width:60% ; margin: 30%; margin-top: 0px ; height: auto;margin-left: 33%;  margin-bottom: 0px;">
-        <span class="text-color">寫點東西</span>
-        <h3 class="text-md mb-5">有什麼想說的嗎</h3>
+        <span class="text-color">麻將</span>
+        <h3 class="text-md mb-5">你也想打是吧</h3>
 
         <div >
           <div >
-            <form id="contact-form" method="post"  class="comment-form mt-5" id="comment-form">
+            <form id="contact-form" method="post">
               <!-- form message -->
               <div class="row">
                 <div class="col-12">
@@ -110,22 +85,25 @@
                 </div>
               </div>
 
-              
               <div class="form-group">
-                <h4 class="mb-4">標題</h4>
-                <textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="1" placeholder="寫在這裡"></textarea>
-
+                <span>請選擇時段</span>
+                <select class="form-control" id="exampleFormControlSelect1" placeholder="你是...">
+                  <option>10:00~12:00</option>
+                  <option>12:00~14:00</option>
+                  <option>14:00~16:00</option>
+                  <option>16:00~18:00</option>
+                </select>
               </div>
 
               <div class="form-group">
-                <h4 class="mb-4">內文</h4>
-                <textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder="寫在這裡"></textarea>
-
+                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的姓名">
               </div>
 
-            
+              <div class="form-group">
+                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的學號">
+              </div>
 
-              <button class="btn btn-main" name="post" type="submit">發文</button>
+              <button class="btn btn-main" name="submit" type="submit" onclick="show_alert()">預約</button>
               
             </form>
           </div>
@@ -137,55 +115,8 @@
   </div>
 </section>
 
-<!-- footer Start -->
-<footer class="footer section">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 mr-auto col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<div class="logo mb-4">
-						<h3>製作團隊</h3>
-					</div>
-					<p>陸霖、吳少宇、翁靖翔</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">瀏覽其他頁面
-					</h4>
-
-					<ul class="list-unstyled footer-menu lh-35" >
-						<li><a href="im_reservation.html">預約系統</a></li>
-						<li><a href="im_calander.html">行事曆</a></li>
-						<li><a href="im_announcement.html">最新公告</a></li>
-						<li><a href="im_contact.html">關於我們</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<div class="logo mb-4">
-						<h3>聯絡我們</h3>
-					</div>
-					<p>新北市新莊區242中正路510號
-						利瑪竇大樓LM306</p>
-					<p>+886-2-2905-2666</p>
-					<p>+886-2-2905-2946</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-btm py-4 mt-5">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
-						&copy; Copyright Reserved to <span class="text-color">陸霖、吳少宇、翁靖翔</span><a href="https://themefisher.com/" target="_blank"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
+	<!-- footer -->
+	<?php include("footer.php");?>
    
 
     <!-- 

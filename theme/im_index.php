@@ -34,32 +34,23 @@
 </head>
 
 <body>
-
-
-
-	<nav class="navbar navbar-expand-lg py-4 navigation header-padding " id="navbar">
+	<!-- header text-black -->
+	<nav class="navbar navbar-expand-lg py-4 navigation header-padding" id="navbar">
 		<div class="container-fluid">
-		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
-			<ul class="navbar-nav m-left">
-			  <li class="nav-item active">
-				<a class="nav-link" href="im_index.html">首頁 <span class="sr-only">(current)</span></a>
-			  </li>
-			   
-			   
-			   <li class="nav-item"><a class="nav-link" href="im_reservation.html">預約系統</a></li>
-			   <li class="nav-item"><a class="nav-link" href="im_calander.html">行事曆</a></li>
-					
-			    <li class="nav-item"><a class="nav-link" href="im_announcement.html">最新公告</a></li>
-
-			   <li class="nav-item"><a class="nav-link" href="im_contact.html">關於我們</a></li>
-			</ul>
-
-			
-		  </div>
-		  <a href="im_login.php" class="btn btn-solid-border d-none d-lg-block">登入<i class="fa fa-angle-right ml-2"></i></a>
+			<div class="collapse navbar-collapse text-center" id="navbarsExample09">
+				<ul class="navbar-nav m-left">
+					<li class="nav-item active">
+						<a class="nav-link" href="im_index.php">首頁 <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="im_reservation.php">預約系統</a></li>
+					<li class="nav-item"><a class="nav-link" href="im_calander.php">行事曆</a></li>
+					<li class="nav-item"><a class="nav-link" href="im_announcement.php">最新公告</a></li>
+					<li class="nav-item"><a class="nav-link" href="im_contact.php">關於我們</a></li>
+				</ul>
+			</div>
+			<a href="im_login.php" class="btn btn-solid-border d-none d-lg-block">登入<i class="fa fa-angle-right ml-2"></i></a>
 		</div>
 	</nav>
-
 
 <!-- Slider Start -->
 <section class="banner d-flex align-items-center">
@@ -72,7 +63,7 @@
 					<h1 class="mb-3 mt-3">資訊管理系學會</h1>
 					<p class="mb-5">本系教學目標旨在讓同學能應用資訊科技解決組織的管理問題，因此，除資訊科技與管理理論之傳授外，整合二者於資訊管理與資訊系統之課程更為本系之教學重心。</p>
 
-					<a href="im_login.html" target="_blank" class="btn btn-main">已經是系學會員嗎? 按此登入<i class="fa fa-angle-right ml-2"></i></a>
+					<a href="im_login.php" target="_blank" class="btn btn-main">已經是系學會員嗎? 按此登入<i class="fa fa-angle-right ml-2"></i></a>
 
 				</div>
 			</div>
@@ -138,7 +129,7 @@
 					<h2 class="mb-4">一起來倒數即將舉辦的<span class="text-color-primary">活動</span> </h2>
 					<p class="mb-30">竟然是他媽的宿營</p>
 					
-					<a href="im_calander.html" class="btn btn-main">了解更多<i class="fa fa-angle-right ml-2"></i></a>
+					<a href="im_calander.php" class="btn btn-main">了解更多<i class="fa fa-angle-right ml-2"></i></a>
 				</div>
 			</div>
 		</div>
@@ -253,56 +244,8 @@
 </section>
 <!-- section Counter End  -->
 
-
-<!-- footer Start -->
-<footer class="footer section">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 mr-auto col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<div class="logo mb-4">
-						<h3>製作團隊</h3>
-					</div>
-					<p>陸霖、吳少宇、翁靖翔</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-4">瀏覽其他頁面
-					</h4>
-
-					<ul class="list-unstyled footer-menu lh-35" >
-						<li><a href="im_reservation.html">預約系統</a></li>
-						<li><a href="im_calander.html">行事曆</a></li>
-						<li><a href="im_announcement.html">最新公告</a></li>
-						<li><a href="im_contact.html">關於我們</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<div class="logo mb-4">
-						<h3>聯絡我們</h3>
-					</div>
-					<p>新北市新莊區242中正路510號
-						利瑪竇大樓LM306</p>
-					<p>+886-2-2905-2666</p>
-					<p>+886-2-2905-2946</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-btm py-4 mt-5">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="copyright">
-						&copy; Copyright Reserved to <span class="text-color">陸霖、吳少宇、翁靖翔</span><a href="https://themefisher.com/" target="_blank"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
+	<!-- footer -->
+	<?php include("footer.php");?>
    
 
     <!-- 
@@ -332,5 +275,5 @@
     <script src="js/script.js"></script>
 	
 
-  </body>
-  </html>
+</body>
+</html>
