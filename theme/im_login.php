@@ -75,7 +75,7 @@
 
         <div weight="100%" height="30%">
           <div weight="100%">
-            <form id="contact-form" action="im_login.php" weidth="30%" method="get">
+            <form id="contact-form" action="im_logincheck.php" weidth="30%" method="get">
               <!-- form message -->
               <div class="row">
                 <div class="col-12">
