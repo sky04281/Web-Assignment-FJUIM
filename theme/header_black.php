@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<nav class="navbar navbar-expand-lg py-4 navigation header-padding nav-text-white" id="navbar">
+<nav class="navbar navbar-expand-lg py-4 navigation header-padding" id="navbar">
     <div class="container-fluid">
         <div class="collapse navbar-collapse text-center" id="navbarsExample09">
             <ul class="navbar-nav m-left">
@@ -15,7 +15,7 @@
         <?php 
         if(isset($_SESSION["membership"]))
         {   
-            echo "<span style='color:white; font-size:16px;'>","您好 ",$_SESSION["name"],"</span>";
+            echo "<span style='color:black; font-size:16px;'>","您好 ",$_SESSION["name"],"</span>";
             echo "<a href='im_logout.php'", "class='btn btn-solid-border d-none d-lg-block'",
             "style='margin-left: 10px'>登出", 
             "<i class='fa fa-angle-right ml-2'></i></a>";

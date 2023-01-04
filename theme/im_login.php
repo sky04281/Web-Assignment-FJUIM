@@ -75,7 +75,7 @@
 
         <div weight="100%" height="30%">
           <div weight="100%">
-            <form id="contact-form" action="im_logincheck.php" weidth="30%" method="get">
+            <form id="contact-form" action="im_logincheck.php" weidth="30%" method="post">
               <!-- form message -->
               <div class="row">
                 <div class="col-12">
@@ -91,8 +91,8 @@
                 <input name="password" type="password" class="form-control" placeholder="密碼" required>
               </div>
 
-              <input class="btn btn-main" type="submit" name="butt" value="login">
-              <a href="im_register.php" class="btn btn-solid-border">register</a>
+              <input class="btn btn-main" type="submit" name="butt" value="登入">
+              <a href="im_register.php" class="btn btn-solid-border">註冊</a>
             </form>
           </div>
         </div>

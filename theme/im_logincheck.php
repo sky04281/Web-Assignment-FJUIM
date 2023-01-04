@@ -5,17 +5,18 @@
 
     $link = mysqli_connect('localhost', 'root', '12345678', 'imdepartment');
 
-    $sql = "SELECT DISTINCT * FROM `account` WHERE `account` = '$account' AND `password` = '$password'";
+    $sql = "SELECT DISTINCT * FROM `account` WHERE account = '$account' AND `password` = '$password'";
 
     $result = mysqli_query($link, $sql);
     
     if($row = mysqli_fetch_assoc($result))
     {
         $_SESSION["membership"] = $row['membership'];
-        header("location:message.php?message=登入成功！");
+        $_SESSION["name"] = $row['name'];
+        header("location:im_message.php?message=登入成功！");
     }
     else
     {
-        header("location:message.php?message=登入失敗！");
+        header("location:im_message.php?message=登入失敗！");
     }
 ?>

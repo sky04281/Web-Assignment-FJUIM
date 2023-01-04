@@ -35,22 +35,7 @@
 
 <body>
 	<!-- header text-black -->
-	<nav class="navbar navbar-expand-lg py-4 navigation header-padding" id="navbar">
-		<div class="container-fluid">
-			<div class="collapse navbar-collapse text-center" id="navbarsExample09">
-				<ul class="navbar-nav m-left">
-					<li class="nav-item active">
-						<a class="nav-link" href="im_index.php">首頁 <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="im_reservation.php">預約系統</a></li>
-					<li class="nav-item"><a class="nav-link" href="im_calander.php">行事曆</a></li>
-					<li class="nav-item"><a class="nav-link" href="im_announcement.php">最新公告</a></li>
-					<li class="nav-item"><a class="nav-link" href="im_contact.php">關於我們</a></li>
-				</ul>
-			</div>
-			<a href="im_login.php" class="btn btn-solid-border d-none d-lg-block">登入<i class="fa fa-angle-right ml-2"></i></a>
-		</div>
-	</nav>
+	<?php include("header_black.php"); ?>
 
 <!-- Slider Start -->
 <section class="banner d-flex align-items-center">
@@ -63,7 +48,7 @@
 					<h1 class="mb-3 mt-3">資訊管理系學會</h1>
 					<p class="mb-5">本系教學目標旨在讓同學能應用資訊科技解決組織的管理問題，因此，除資訊科技與管理理論之傳授外，整合二者於資訊管理與資訊系統之課程更為本系之教學重心。</p>
 
-					<a href="im_login.php" target="_blank" class="btn btn-main">已經是系學會員嗎? 按此登入<i class="fa fa-angle-right ml-2"></i></a>
+					<a href="im_login.php" class="btn btn-main">已經是系學會員嗎? 按此登入<i class="fa fa-angle-right ml-2"></i></a>
 
 				</div>
 			</div>
