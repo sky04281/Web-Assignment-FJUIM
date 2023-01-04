@@ -62,7 +62,7 @@
                     ?>
                         <a href="im_login.php" class="btn btn-solid-border">登入</a>
                     <?php
-                    }else if($_GET['message']=="您輸入的帳號已有人註冊過"){
+                    }else if($_GET['message']=="您輸入的學號已有人註冊過"){
                     ?>
                         <a href="im_register.php" class="btn btn-solid-border">重新註冊</a>
                     <?php

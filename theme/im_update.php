@@ -84,10 +84,10 @@
                     <tr>
                         <td>權限資格&emsp;</td>
                         <td><input type = text name = "membership" value = "<?php echo $membership; ?>" class="form-control"></td>
-                        <!-- <?php if($membership == 1){ ?>
+                        <!-- <?php if($membership == "admin"){ ?>
                             <td>權限資格&emsp;</td>
                             <td><input type = "text" name = "membership" value = "<?php echo $membership; ?>" class="form-control"></td>
-                        <?php }else if($membership == -1){ ?>
+                        <?php }else if($membership == "user"){ ?>
                             <td>權限資格&emsp;</td>
                             <td><font color = red><?php echo $membership; ?></font></td>
                             <input type = hidden name = "membership" value = "<?php echo $membership ?>">

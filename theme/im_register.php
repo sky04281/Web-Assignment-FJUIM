@@ -14,11 +14,11 @@
       }
     }
     if($times>0){
-      header("Location:im_mess.php?message=您輸入的帳號已有人註冊過");
+      header("Location:im_message.php?message=您輸入的學號已有人註冊過");
     }else{
-      $sql = "insert into account (name, account, password) values ('$name','$account','$password')";
+      $sql = "insert into account (name, account, password, membership) values ('$name','$account','$password', 'user')";
       $result = mysqli_query($link,$sql);
-      header("Location:im_mess.php?message=註冊成功");
+      header("Location:im_message.php?message=註冊成功");
     }
 
   }
@@ -102,14 +102,6 @@
               </div>
 
               <div class="form-group">
-                <select class="form-control" id="exampleFormControlSelect1" placeholder="你是...">
-                  <option>請選擇性別</option>
-                  <option>男生</option>
-                  <option>女生</option>
-                  <option>其他</option>
-                  <option>情況很複雜</option>
-                
-                </select>
               </div>
             <form method="get" action="im_register.php">
               <div class="form-group">
@@ -117,14 +109,14 @@
               </div>
 
               <div class="form-group">
-                <input name="account" type="text" class="form-control" placeholder="帳號" required>
+                <input name="account" type="text" class="form-control" placeholder="學號" required>
               </div>
 
               <div class="form-group">
                 <input name="password" type="text" class="form-control" placeholder="密碼" required>
               </div>
 
-              <input class="btn btn-main" type="submit" name="butt" value="register">
+              <input class="btn btn-main" type="submit" name="butt" value="註冊">
             </form>
           </form>
           </div>

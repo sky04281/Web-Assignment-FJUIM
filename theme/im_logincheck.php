@@ -17,6 +17,6 @@
     }
     else
     {
-        header("location:im_message.php?message=登入失敗！");
+        header("location:im_message.php?message=帳號或密碼錯誤");
     }
 ?>

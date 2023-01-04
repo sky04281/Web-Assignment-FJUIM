@@ -10,6 +10,11 @@
                 <li class="nav-item"><a class="nav-link" href="im_calander.php">行事曆</a></li>
                 <li class="nav-item"><a class="nav-link" href="im_announcement.php">最新公告</a></li>
                 <li class="nav-item"><a class="nav-link" href="im_contact.php">關於我們</a></li>
+                <?php
+                    if ($_SESSION["membership"] == "admin") {
+                        echo "<li class='nav-item'>","<a class='nav-link'", "href='im_manage.php'>管理平台</a></li>";
+                    }                
+                ?>
             </ul>
         </div>
         <?php 
