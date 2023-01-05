@@ -11,8 +11,10 @@
     
     if($row = mysqli_fetch_assoc($result))
     {
+        $_SESSION["account"] = $row['account'];
         $_SESSION["membership"] = $row['membership'];
         $_SESSION["name"] = $row['name'];
+        $_SESSION["password"] = $row['password'];
         header("location:im_message.php?message=登入成功！");
     }
     else

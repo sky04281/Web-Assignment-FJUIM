@@ -1,12 +1,14 @@
+<?php
+	session_start();
+  $account = $_SESSION["account"];
+  $name = $_SESSION["name"];
+	if (!(isset($_SESSION["membership"]))) {
+		header("Location:im_message.php?message=請先登入");
+	}
+  $rtime = $_GET["rtime"];
+?>
+
 <!DOCTYPE html>
-
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,13 +16,6 @@
   <meta name="author" content="themefisher.com">
 
   <title>預約麻將</title>
-  <script type="text/javascript">
-    function show_alert()
-    {
-    alert("預約成功")
-    }
-    </script>
-
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
 
@@ -74,26 +69,25 @@
         <div >
           <div >
             <form id="contact-form" method="get" action="schedule.php">
-              <div class="form-group">
-                <input name="rtype"type="hidden" value="majang">
-              </div>
-
+              <input name="rtype"type="hidden" value="majang">
               <div class="form-group">
                 <span>請選擇時段</span>
-                <select class="form-control" name="rtime" id="exampleFormControlSelect1" placeholder="你是...">
-                  <option>10:00~12:00</option>
-                  <option>12:00~14:00</option>
-                  <option>14:00~16:00</option>
-                  <option>16:00~18:00</option>
+                <select class="form-control" name="rtime" id="exampleFormControlSelect1">
+                  <option <?php if($rtime=="10:00~12:00"){echo "selected";} ?>>10:00~12:00</option>
+                  <option <?php if($rtime=="12:00~14:00"){echo "selected";} ?>>12:00~14:00</option>
+                  <option <?php if($rtime=="14:00~16:00"){echo "selected";} ?>>14:00~16:00</option>
+                  <option <?php if($rtime=="16:00~18:00"){echo "selected";} ?>>16:00~18:00</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <input name="name" type="text" class="form-control" placeholder="你的姓名">
+                <span>你的姓名</span>
+                <input name="name" type="text" class="form-control" placeholder="你的姓名" value="<?php echo $name; ?>">
               </div>
 
               <div class="form-group">
-                <input name="account" type="text" class="form-control" placeholder="你的學號">
+                <span>你的學號</span>
+                <input name="account" type="text" class="form-control" placeholder="你的學號" value="<?php echo $account; ?>">
               </div>
               <button class="btn btn-main" name="submit" type="submit">預約</button>
             </form>

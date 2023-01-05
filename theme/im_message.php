@@ -58,9 +58,9 @@
                     ?>
                         <a href="im_login.php" class="btn btn-solid-border">重新登入</a>
                     <?php
-                    }else if($_GET['message']=="註冊成功"){
+                    }else if(($_GET['message']=="註冊成功") || ($_GET['message']=="請先登入")){
                     ?>
-                        <a href="im_login.php" class="btn btn-solid-border">登入</a>
+                        <a href="im_login.php" class="btn btn-solid-border">點此登入</a>
                     <?php
                     }else if($_GET['message']=="您輸入的學號已有人註冊過"){
                     ?>

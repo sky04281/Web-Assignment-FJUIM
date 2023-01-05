@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -84,7 +76,10 @@
 				<div class="col-lg-6">
 					<div class="case-content">
 						<h4 class="mb-3">10:00~12:00</h4>
-						<p>啊...已被預約走了下次請早...</p>
+						<?php
+							$rtime = "10:00~12:00"; $rtype = "majang";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 			</div>
@@ -98,8 +93,10 @@
 				<div class="col-lg-6 order-2 order-lg-1">
 					<div class="case-content">
 						<h4 class="mb-3">12:00~14:00</h4>
-						<p>還有空位</p>
-                        <a href="im_majang_schedule.php" class="btn btn-main">立即預約</a>
+						<?php
+							$rtime = "12:00~14:00"; $rtype = "majang";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 				<div class="col-lg-6  order-1 order-lg-2">
@@ -123,8 +120,10 @@
 				<div class="col-lg-6">
 					<div class="case-content">
 						<h4 class="mb-3">14:00~16:00</h4>
-						<p>還有空位</p>
-                        <a href="im_majang_schedule.php" class="btn btn-main">立即預約</a>
+						<?php
+							$rtime = "14:00~16:00"; $rtype = "majang";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 			</div>
@@ -138,8 +137,10 @@
 					<div class="col-lg-6 order-2 order-lg-1">
 					<div class="case-content">
 						<h4 class="mb-3">16:00~18:00</h4>
-						<p>還有空位</p>
-                        <a href="im_majang_schedule.php" class="btn btn-main">立即預約</a>
+						<?php
+							$rtime = "16:00~18:00"; $rtype = "majang";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 

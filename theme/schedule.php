@@ -18,5 +18,4 @@
         $rs = mysqli_query($link,$sql);
         header("Location:im_message.php?message=預約成功");
     }
-    
 ?>
