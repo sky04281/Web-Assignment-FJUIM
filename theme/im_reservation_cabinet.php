@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -83,8 +75,11 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="case-content">
-						<h4 class="mb-3">10:00~12:00</h4>
-						<p>啊...已被預約走了下次請早...</p>
+						<h4 class="mb-3">台灣</h4>
+						<?php
+							$rtime = "台灣"; $rtype = "cabinet";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 			</div>
@@ -97,9 +92,11 @@
 			<div class="row align-items-center">	
 				<div class="col-lg-6 order-2 order-lg-1">
 					<div class="case-content">
-						<h4 class="mb-3">12:00~14:00</h4>
-						<p>還有空位</p>
-                        <a href="im_cabinet_schedule.php" class="btn btn-main">立即預約</a>
+						<h4 class="mb-3">日本</h4>
+						<?php
+							$rtime = "日本"; $rtype = "cabinet";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 				<div class="col-lg-6  order-1 order-lg-2">
@@ -122,9 +119,11 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="case-content">
-						<h4 class="mb-3">14:00~16:00</h4>
-						<p>還有空位</p>
-						<a href="im_cabinet_schedule.php" class="btn btn-main">立即預約</a>
+						<h4 class="mb-3">瑞士</h4>
+						<?php
+							$rtime = "瑞士"; $rtype = "cabinet";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 			</div>
@@ -137,9 +136,11 @@
 			<div class="row align-items-center">
 					<div class="col-lg-6 order-2 order-lg-1">
 					<div class="case-content">
-						<h4 class="mb-3">16:00~18:00</h4>
-						<p>還有空位</p>
-                        <a href="im_cabinet_schedule.php" class="btn btn-main">立即預約</a>
+						<h4 class="mb-3">巴拉圭</h4>
+						<?php
+							$rtime = "巴拉圭"; $rtype = "cabinet";
+							include("im_reservation_check.php"); 
+						?>
 					</div>
 				</div>
 

@@ -1,12 +1,14 @@
+<?php
+	session_start();
+  $account = $_SESSION["account"];
+  $name = $_SESSION["name"];
+	if (!(isset($_SESSION["membership"]))) {
+		header("Location:im_message.php?message=請先登入");
+	}
+  $rtime = $_GET["rtime"];
+?>
+
 <!DOCTYPE html>
-
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,12 +16,6 @@
   <meta name="author" content="themefisher.com">
 
   <title>預約系櫃</title>
-  <script type="text/javascript">
-    function show_alert()
-    {
-    alert("預約成功")
-    }
-    </script>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -73,38 +69,29 @@
 
         <div >
           <div >
-            <form id="contact-form" method="post">
-              <!-- form message -->
-              <div class="row">
-                <div class="col-12">
-                    <!---
-                  <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                    註冊成功
-                  </div>
-                -->
-                </div>
-              </div>
-
+            <form id="contact-form" method="get" action="schedule.php">
+            <input name="rtype"type="hidden" value="cabinet">
               <div class="form-group">
-                <span>請選擇要哪個</span>
-                <select class="form-control" id="exampleFormControlSelect1" placeholder="你是...">
-                  <option>台灣</option>
-                  <option>日本</option>
-                  <option>瑞士</option>
-                  <option>巴拉圭</option>
+                <span>請選擇櫃位</span>
+                <select class="form-control" id="exampleFormControlSelect1" name="rtime">
+                  <option <?php if($rtime=="台灣"){echo "selected";} ?>>台灣</option>
+                  <option <?php if($rtime=="日本"){echo "selected";} ?>>日本</option>
+                  <option <?php if($rtime=="瑞士"){echo "selected";} ?>>瑞士</option>
+                  <option <?php if($rtime=="巴拉圭"){echo "selected";} ?>>巴拉圭</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的姓名">
+                <span>你的姓名</span>
+                <input name="name" type="text" class="form-control" placeholder="你的姓名" value="<?php echo $name;?>">
               </div>
 
               <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的學號">
+                <span>你的學號</span>
+                <input name="account" type="text" class="form-control" placeholder="你的學號" value="<?php echo $account;?>">
               </div>
-
-              <button class="btn btn-main" name="submit" type="submit" onclick="show_alert()">預約</button>
               
+              <button class="btn btn-main" name="submit" type="submit">預約</button>
             </form>
           </div>
 
