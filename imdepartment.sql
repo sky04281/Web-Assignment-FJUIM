@@ -32,7 +32,7 @@ CREATE TABLE `account` (
   `name` varchar(30) NOT NULL,
   `account` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `membership` tinyint(1) NOT NULL
+  `membership` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -40,8 +40,9 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`name`, `account`, `password`, `membership`) VALUES
-('翁靖翔', '410402410', '123', -1),
-('rooter', 'root', '12345678', 1);
+('吳少宇', '410402173', '1234', 'user'),
+('翁靖翔', '410402410', '123', 'user'),
+('rooter', 'root', '12345678', 'admin');
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,28 @@ CREATE TABLE `comment` (
 
 INSERT INTO `comment` (`user`, `department`, `datetime`, `message`, `num`) VALUES
 ('Lucas', '資訊管理學系', '2022-12-21 13:29:18', '好想要抽IPHONE!!!', 3),
-('Lucy', '資訊工程學系', '2022-12-22 01:20:37', '阿怎麼都沒有正妹\r\n到底誰會想要認識啦', 2);
+('Lucy', '資訊工程學系', '2022-12-22 01:20:37', '阿怎麼都沒有正妹\r\n到底誰會想要認識啦', 2),
+('123132', '132123', '2023-01-04 05:37:14', '312313', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `account` varchar(30) COLLATE utf8_bin NOT NULL,
+  `name` varchar(30) COLLATE utf8_bin NOT NULL,
+  `rtime` varchar(30) COLLATE utf8_bin NOT NULL,
+  `rtype` varchar(30) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 傾印資料表的資料 `reservation`
+--
+
+INSERT INTO `reservation` (`account`, `name`, `rtime`, `rtype`) VALUES
+('410402173', '吳少宇', '10:00~12:00', 'majang');
 
 --
 -- 已傾印資料表的索引
@@ -103,6 +125,13 @@ ALTER TABLE `account`
 --
 ALTER TABLE `announcement`
   ADD PRIMARY KEY (`num`);
+
+--
+-- 資料表索引 `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`account`,`rtime`),
+  ADD KEY `account` (`account`);
 
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
