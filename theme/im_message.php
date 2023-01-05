@@ -47,7 +47,7 @@
 </section>
 
 <!-- section portfolio start -->
-<section class="section portfolio">
+<section class="contact-form-wrap section">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
