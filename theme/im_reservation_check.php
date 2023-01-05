@@ -12,7 +12,7 @@
     <?php
         if ($_SESSION["membership"] == "admin") {
     ?>
-        <a href="im_reservation_delete.php?<?php echo "rtime=", $rtime, "&rtype=", $rtype, "&account=", $row['account'];?>" class="btn btn-main">取消預約</a>
+        <a href="im_reservation_delete.php?<?php echo "rtime=", $rtime, "&rtype=", $rtype, "&account=", $row['account'];?>" class="btn btn-solid-border">取消預約</a>
     <?php
         }
     ?>
