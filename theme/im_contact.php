@@ -72,7 +72,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/03-1.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/60.jpg" alt="" class="img-fluid w-100">
 
 					<h4 class="mt-4 mb-0">陸霖</h4>
 					<p>美術總監</p>
@@ -81,7 +81,7 @@
 
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/01-3.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/sky.png" alt="" class="img-fluid w-100">
 
 					<h4 class="mt-4 mb-0">吳少宇</h4>
 					<p>技術指導</p>
@@ -90,7 +90,7 @@
 
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/03-1.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/lucas.png" alt="" class="img-fluid w-100">
 
 					<h4 class="mt-4 mb-0">翁靖翔</h4>
 					<p>後台支援</p>
@@ -98,7 +98,7 @@
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/03-1.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/master.png" alt="" class="img-fluid w-100">
 
 					<h4 class="mt-4 mb-0">廖建翔</h4>
 					<p>幕後功臣</p>

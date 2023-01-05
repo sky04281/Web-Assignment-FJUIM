@@ -70,7 +70,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<div class="case-img ">
-						<img src="images/about/process-3.jpg" alt="" class="img-fluid">
+						<img src="images/about/101.png" alt="" class="img-fluid">
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -101,7 +101,7 @@
 				</div>
 				<div class="col-lg-6  order-1 order-lg-2">
 					<div class="case-img">
-						<img src="images/about/process-2.jpg" alt="" class="img-fluid">
+						<img src="images/about/skytree.jpg" alt="" class="img-fluid">
 					</div>
 				</div>
 			</div>
@@ -114,7 +114,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<div class="case-img">
-						<img src="images/about/process-1.jpg" alt="" class="img-fluid">
+						<img src="images/about/switzerland.jpg" alt="" class="img-fluid">
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -146,7 +146,7 @@
 
 				<div class="col-lg-6  order-1 order-lg-2">
 					<div class="case-img">
-						<img src="images/about/structure_sass.png" alt="" class="img-fluid">
+						<img src="images/about/53.jpg" alt="" class="img-fluid">
 					</div>
 				</div>
 			</div>
