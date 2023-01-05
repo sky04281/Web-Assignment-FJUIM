@@ -71,8 +71,12 @@
                         <a href="im_reservation.php" class="btn btn-solid-border">預約其他時段</a>
                     <?php
                     }else if($_GET['message']=="您已在此時段預約過"){
-                      ?>
+                    ?>
                         <a href="im_reservation.php" class="btn btn-solid-border">預約其他時段</a>
+                    <?php
+                    }else if($_GET['message']=="預約成功"){
+                    ?>
+                        <a href="im_reservation.php" class="btn btn-solid-border">回到預約系統</a>
                     <?php
                     }else{
                     ?>
