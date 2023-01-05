@@ -89,7 +89,6 @@
 
         <div >
           <div >
-          <form id="contact-form" method="get">
               <!-- form message -->
               <div class="row">
                 <div class="col-12">
@@ -101,8 +100,6 @@
                 </div>
               </div>
 
-              <div class="form-group">
-              </div>
             <form method="get" action="im_register.php">
               <div class="form-group">
                 <input name="name" type="text" class="form-control" placeholder="姓名" required>
@@ -118,7 +115,6 @@
 
               <input class="btn btn-main" type="submit" name="butt" value="註冊">
             </form>
-          </form>
           </div>
 
         </div>

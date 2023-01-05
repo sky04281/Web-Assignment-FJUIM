@@ -66,6 +66,14 @@
                     ?>
                         <a href="im_register.php" class="btn btn-solid-border">重新註冊</a>
                     <?php
+                    }else if($_GET['message']=="此時段已被預約"){
+                    ?>
+                        <a href="im_reservation.php" class="btn btn-solid-border">預約其他時段</a>
+                    <?php
+                    }else if($_GET['message']=="您已在此時段預約過"){
+                      ?>
+                        <a href="im_reservation.php" class="btn btn-solid-border">預約其他時段</a>
+                    <?php
                     }else{
                     ?>
                         <a href="im_index.php" class="btn btn-solid-border">回首頁</a>

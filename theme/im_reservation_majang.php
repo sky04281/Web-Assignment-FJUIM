@@ -99,7 +99,7 @@
 					<div class="case-content">
 						<h4 class="mb-3">12:00~14:00</h4>
 						<p>還有空位</p>
-                        <a href="im_mahang_schedule.php" class="btn btn-main">立即預約</a>
+                        <a href="im_majang_schedule.php" class="btn btn-main">立即預約</a>
 					</div>
 				</div>
 				<div class="col-lg-6  order-1 order-lg-2">
@@ -124,7 +124,7 @@
 					<div class="case-content">
 						<h4 class="mb-3">14:00~16:00</h4>
 						<p>還有空位</p>
-                        <a href="im_mahang_schedule.php" class="btn btn-main">立即預約</a>
+                        <a href="im_majang_schedule.php" class="btn btn-main">立即預約</a>
 					</div>
 				</div>
 			</div>
@@ -139,7 +139,7 @@
 					<div class="case-content">
 						<h4 class="mb-3">16:00~18:00</h4>
 						<p>還有空位</p>
-                        <a href="im_mahang_schedule.php" class="btn btn-main">立即預約</a>
+                        <a href="im_majang_schedule.php" class="btn btn-main">立即預約</a>
 					</div>
 				</div>
 

@@ -8,10 +8,10 @@
     $result = mysqli_query($link,$sql);
     if($row=mysqli_fetch_array($result)){
       if($account==$row['account']&&$password==$row['password']){
-        header("Location:im_mess.php?message=登入成功");
+        header("Location:im_message.php?message=登入成功");
       }
     }else{
-      header("Location:im_mess.php?message=登入失敗");
+      header("Location:im_message.php?message=登入失敗");
     }
   }  
 ?>

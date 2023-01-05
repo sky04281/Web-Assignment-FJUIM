@@ -73,21 +73,14 @@
 
         <div >
           <div >
-            <form id="contact-form" method="post">
-              <!-- form message -->
-              <div class="row">
-                <div class="col-12">
-                    <!---
-                  <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                    註冊成功
-                  </div>
-                -->
-                </div>
+            <form id="contact-form" method="get" action="schedule.php">
+              <div class="form-group">
+                <input name="rtype"type="hidden" value="majang">
               </div>
 
               <div class="form-group">
                 <span>請選擇時段</span>
-                <select class="form-control" id="exampleFormControlSelect1" placeholder="你是...">
+                <select class="form-control" name="rtime" id="exampleFormControlSelect1" placeholder="你是...">
                   <option>10:00~12:00</option>
                   <option>12:00~14:00</option>
                   <option>14:00~16:00</option>
@@ -96,15 +89,13 @@
               </div>
 
               <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的姓名">
+                <input name="name" type="text" class="form-control" placeholder="你的姓名">
               </div>
 
               <div class="form-group">
-                <input name="subject" id="subject" type="text" class="form-control" placeholder="你的學號">
+                <input name="account" type="text" class="form-control" placeholder="你的學號">
               </div>
-
-              <button class="btn btn-main" name="submit" type="submit" onclick="show_alert()">預約</button>
-              
+              <button class="btn btn-main" name="submit" type="submit">預約</button>
             </form>
           </div>
 
