@@ -1,13 +1,15 @@
 <?php
     if(!empty($_GET['butt'])){
-    $name = $_GET['name'];
-    $account = $_GET['account'];
-    $password = $_GET['password'];
-    $membership = $_GET['membership'];
-
-    $link = mysqli_connect('localhost', 'root', '12345678', 'imdepartment');
-    $sql = "update account set account='$account', password='$password', membership='$membership' where name='$name'";
-    $result = mysqli_query($link, $sql);
+        $title = $_GET['title'];
+        $short = $_GET['short'];
+        $content = $_GET['content'];
+        $date = $_GET['date'];
+        
+        $link = mysqli_connect('localhost','root','12345678','imdepartment');
+        $sql = "insert into announcement (title,short,content,date) values ('$title','$short','$content','$date')";
+        if($rs = mysqli_query($link,$sql)){
+            header("Location:im_message.php?message=新增公告成功");
+        }
     }
 ?>
 <html lang="zxx">
@@ -19,7 +21,7 @@
   <!-- theme meta -->
   <meta name="theme-name" content="orbitor" />
 
-  <title>帳號管理平台</title>
+  <title>新增公告</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -50,52 +52,24 @@
     
     <section class="section blog-wrap" style="margin-top:50px">
         <div class="container">
-            <div align="center">	
-                <?php
-                    $name = $_GET['name'];
-                    $link = mysqli_connect('localhost', 'root', '12345678', 'imdepartment');
-                    $sql = "select * from account where name = '$name'";
-                    $result = mysqli_query($link, $sql);
-                    if($row=mysqli_fetch_assoc($result))
-                    {
-                        $name = $row['name'];
-                        $account = $row['account'];
-                        $password = $row['password'];
-                        $membership = $row['membership'];
-                    }
-                ?>
-                <form method = "get" action = "im_update.php">
-                    <input type=hidden name="name" value="<?php echo $name; ?>">
+            <div align="center">
+                <form method = "get" action = "im_announcement_insert.php">
                     <table cellpadding="5">
                     <tr>
-                        <td>姓名</td>
-                        <td><input type = text name = "name" value = "<?php echo $name; ?>" class="form-control"></td>
+                        <td><input class="form-control" type="text" name="title"  placeholder="標題:" required></td>
                         <!-- <td><font color = red><php echo $SID;?></font></td> -->
                     </tr>
                     <tr>
-                        <td>帳號</td>
-                        <td><font color = red><?php echo $account; ?></font></td>
-                        <input type = hidden name = "account" value = "<?php echo $account ?>">
+                        <td><textarea class="form-control" name="short" cols="30" rows="5" placeholder="短文"></textarea></td>
                     </tr>
                     <tr>
-                        <td>密碼</td>
-                        <td><input type = text name = "password" value = "<?php echo $password; ?>" class="form-control"></td>
+                        <td><textarea class="form-control" name="content" cols="30" rows="5" placeholder="內容"></textarea></td>
                     </tr>
                     <tr>
-                        <td>權限資格&emsp;</td>
-                        <td><input type = text name = "membership" value = "<?php echo $membership; ?>" class="form-control"></td>
-                        <!-- <?php if($membership == "admin"){ ?>
-                            <td>權限資格&emsp;</td>
-                            <td><input type = "text" name = "membership" value = "<?php echo $membership; ?>" class="form-control"></td>
-                        <?php }else if($membership == "user"){ ?>
-                            <td>權限資格&emsp;</td>
-                            <td><font color = red><?php echo $membership; ?></font></td>
-                            <input type = hidden name = "membership" value = "<?php echo $membership ?>">
-                         <?php } ?>可用在個人修改密碼部分 -->
+                        <td><input type="date" class="form-control" name="date" value="2023-01-01"><td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td><input class="btn btn-main" type="submit" name="butt" value="更改資料"></td>
+                        <td><input class="btn btn-main" type="submit" name="butt" value="發布公告"></td>
                     </tr>
                     </table>
                 </form>

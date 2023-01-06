@@ -13,7 +13,7 @@
                 <?php
                     if(isset($_SESSION["membership"])){
                         if ($_SESSION["membership"] == "admin") {
-                        echo "<li class='nav-item'>","<a class='nav-link'", "href='im_manage.php'>管理平台</a></li>";
+                            echo "<li class='nav-item'>","<a class='nav-link'", "href='im_manage.php'>管理平台</a></li>";
                         }
                     }                
                 ?>

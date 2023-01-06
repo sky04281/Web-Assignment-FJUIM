@@ -78,6 +78,18 @@
                     ?>
                         <a href="im_reservation.php" class="btn btn-solid-border">回到預約系統</a>
                     <?php
+                    }else if($_GET['message']=="新增公告成功"){
+                    ?>
+                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理平台</a>
+                    <?php
+                    }else if($_GET['message']=="刪除公告成功"){
+                    ?>
+                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理平台</a>
+                    <?php
+                    }else if($_GET['message']=="更新公告成功"){
+                    ?>
+                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理平台</a>
+                    <?php
                     }else{
                     ?>
                         <a href="im_index.php" class="btn btn-solid-border">回首頁</a>

@@ -73,10 +73,21 @@
 				</div> 
 
 				<p class="mb-4"><?php echo $short ?></p>
-
-				<input type="button" name="button" value="了解更多" onclick="window.location.href='im_announce_single.php?num=<?php echo $num ?>'" class="btn btn-small btn-main ">
-				<a href="" class="btn btn-solid-border">編輯</a>
-				<a href="" class="btn btn-solid-border">刪除</a>
+        <a href="im_announce_single.php?num=<?php echo $num ?>" class="btn btn-solid-border">了解更多</a>
+				<?php
+          if(isset($_SESSION['membership'])){
+            if($_SESSION['membership']=="admin"){
+              ?>
+              <!-- <input type="button" name="button" value="新增" onclick="window.location.href='im_announcement_insert.php'" class="btn btn-small btn-main ">
+              <input type="button" name="button" value="編輯" onclick="window.location.href='im_announcement_update.php?num=<?php echo $num ?>'" class="btn btn-small btn-main ">
+              <input type="button" name="button" value="刪除" onclick="window.location.href='im_announcement.php?num=<?php echo $num ?>'" class="btn btn-small btn-main "> -->
+              <a href="im_announcement_insert.php?" class="btn btn-solid-border">新增</a>
+              <a href="im_announcement_update.php?num=<?php echo $num ?>" class="btn btn-solid-border">編輯</a>
+              <a href="im_announcement_delete.php?num=<?php echo $num ?>" class="btn btn-solid-border">刪除</a>
+            <?php
+              }
+            }  
+          ?>
 				
 			</div>
 		</div>
