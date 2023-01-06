@@ -9,6 +9,13 @@
 		$mes_sql = "insert into comment (user, department, message, num) values ('$user', '$department', '$message', '$num')";
 		$mes_rs = mysqli_query($link,$mes_sql);
 	}
+	if(!empty($_GET['mess'])){
+		$mess = $_GET['mess'];
+		$num = $_GET['num'];
+		$link = mysqli_connect('localhost','root','12345678','imdepartment');
+		$delsql = "delete from comment where message like '%$mess%'";
+		$delrs = mysqli_query($link,$delsql);
+	}
 ?>
 <html lang="zxx">
 <head>
@@ -178,6 +185,16 @@
 							<h5 class="mb-1"><?php echo $user ?></h5>
 							<span><?php echo $department ?></span>
 							<span class="date-comm">&emsp;|&emsp;<?php echo $datetime ?></span>
+							<?php
+								if(isset($_SESSION['membership'])){
+									if($user==$_SESSION['name']||$_SESSION['membership']=="admin"){
+									?>
+										<span class="date-comm" onclick="window.location.href='im_announce_single.php?mess=<?php echo $message ?>&num=<?php echo $num?>'">&emsp;|&emsp;刪除</span>
+									<?php
+										}
+
+									}
+								?>
 						</div>
 
 						<div class="comment-content mt-3">
@@ -195,15 +212,18 @@
 	<?php
 		}
 	?>
-
+	<?php
+		if(isset($_SESSION['membership'])){
+	?>
 	<div class="col-lg-12">
 		<form class="comment-form mt-5" id="comment-form" action="im_announce_single.php" method="get">
 			<input type=hidden name="num" value="<?php echo $num ?>">
 			<h4 class="mb-4">寫點東西...</h4>
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group">		
-					<input class="form-control" type="text" name="user" placeholder="姓名:" required>
+					<div class="form-group">
+					<div class="form-control"><?php echo $_SESSION['name'] ?></div>
+					<input type="hidden" name="user" value="<?php echo $_SESSION['name']?>">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -219,6 +239,9 @@
 			<input class="btn btn-main" type="submit" name="butt" value="留言">
 		</form>
 	</div>
+	<?php
+		}
+	?>
 </div>
      
 </section>
