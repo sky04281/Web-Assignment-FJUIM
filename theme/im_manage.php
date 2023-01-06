@@ -55,13 +55,13 @@
                         $sql  = "select * from account";
                         $result = mysqli_query($link,$sql);
                         While($row=mysqli_fetch_assoc($result)){
-                          echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=update.php?name=", $row['name'], ">[修改]</a><a href=delete.php?name=", $row['name'], ">[刪除]</a></td></tr>";
+                          echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=update.php?account=", $row['account'], ">[修改]</a><a href=im_delete.php?account=", $row['account'], ">[刪除]</a></td></tr>";
                         }
                       }else if(!empty($searchtxt)){
                         $sql  = "select * from account where name like '%$searchtxt%'";
                         $result = mysqli_query($link,$sql);
                         While($row=mysqli_fetch_assoc($result)){
-                          echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=update.php?name=", $row['name'], ">[修改]</a><a href=delete.php?name=", $row['name'], ">[刪除]</a></td></tr>";
+                          echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=update.php?account=", $row['account'], ">[修改]</a><a href=im_delete.php?account=", $row['account'], ">[刪除]</a></td></tr>";
                         }
                       }
                     }else{
@@ -69,7 +69,7 @@
                       $sql  = "select * from account";
                       $result = mysqli_query($link,$sql);
                       While($row=mysqli_fetch_assoc($result)){
-                        echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=im_update.php?name=", $row['name'], ">[修改]</a><a href=delete.php?name=", $row['name'], ">[刪除]</a></td></tr>";
+                        echo "<tr><td>", $row['name'], "</td><td>", $row['account'], "</td><td><a href=im_update.php?account=", $row['account'], ">[修改]</a><a href=im_delete.php?account=", $row['account'], ">[刪除]</a></td></tr>";
                       }
                     }
                   ?>

@@ -80,15 +80,27 @@
                     <?php
                     }else if($_GET['message']=="新增公告成功"){
                     ?>
-                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理平台</a>
+                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理</a>
                     <?php
                     }else if($_GET['message']=="刪除公告成功"){
                     ?>
-                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理平台</a>
+                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理</a>
                     <?php
                     }else if($_GET['message']=="更新公告成功"){
                     ?>
-                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理平台</a>
+                        <a href="im_announcement.php" class="btn btn-solid-border">回到公告管理</a>
+                    <?php
+                    }else if($_GET['message']=="更新行事曆成功"){
+                    ?>
+                        <a href="im_calander.php" class="btn btn-solid-border">回到行事曆</a>
+                    <?php
+                    }else if($_GET['message']=="更新帳號成功"){
+                    ?>
+                        <a href="im_manage.php" class="btn btn-solid-border">回到帳號管理</a>
+                    <?php
+                    }else if($_GET['message']=="刪除帳號成功"){
+                    ?>
+                        <a href="im_manage.php" class="btn btn-solid-border">回到帳號管理</a>
                     <?php
                     }else{
                     ?>

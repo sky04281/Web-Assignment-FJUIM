@@ -1,14 +1,14 @@
 <?php
     if(!empty($_GET['butt'])){
-        $name = $_GET['name'];
-        $account = $_GET['account'];
-        $password = $_GET['password'];
-        $membership = $_GET['membership'];
-
-        $link = mysqli_connect('localhost', 'root', '12345678', 'imdepartment');
-        $sql = "UPDATE `account` SET `name`='$name', `password`='$password', membership='$membership' WHERE `account`='$account'";
-        if($result = mysqli_query($link, $sql)){
-            header("Location:im_message.php?message=更新帳號成功");
+        $cnum = $_GET['cnum'];
+        $ctime = $_GET['ctime'];
+        $ctitle = $_GET['ctitle'];
+        $ctext = $_GET['ctext'];
+        
+        $link = mysqli_connect('localhost','root','12345678','imdepartment');
+        $sql = "UPDATE `calander` SET ctime = '$ctime', ctitle = '$ctitle', ctext = '$ctext' WHERE cnum = '$cnum'";
+        if($rs = mysqli_query($link,$sql)){
+            header("Location:im_message.php?message=更新行事曆成功");
         }
     }
 ?>
@@ -21,7 +21,7 @@
   <!-- theme meta -->
   <meta name="theme-name" content="orbitor" />
 
-  <title>帳號管理平台</title>
+  <title>更改行事曆</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
@@ -52,49 +52,33 @@
     
     <section class="section blog-wrap" style="margin-top:50px">
         <div class="container">
-            <div align="center">	
+            <div align="center">
                 <?php
-                    $account = $_GET['account'];
-                    $link = mysqli_connect('localhost', 'root', '12345678', 'imdepartment');
-                    $sql = "SELECT * FROM `account` WHERE account = '$account'";
-                    $result = mysqli_query($link, $sql);
-                    if($row=mysqli_fetch_assoc($result))
-                    {
-                        $name = $row['name'];
-                        $account = $row['account'];
-                        $password = $row['password'];
-                        $membership = $row['membership'];
+                    $cnum = $_GET['cnum'];
+                    $link = mysqli_connect('localhost','root','12345678','imdepartment');
+                    $selectsql = "SELECT * FROM `calander` WHERE cnum = '$cnum'";
+
+                    $selectrs = mysqli_query($link,$selectsql);
+                    while($row = mysqli_fetch_array($selectrs)){
+                        $ctime = $row['ctime'];
+                        $ctitle = $row['ctitle'];
+                        $ctext = $row['ctext'];
                     }
                 ?>
-                <form method = "get" action = "im_update.php">
-                    <input type=hidden name="name" value="<?php echo $name; ?>">
+                <form method = "get" action = "im_calander_update.php">
+                    <input type=hidden name="cnum" value="<?php echo $cnum; ?>">
                     <table cellpadding="5">
                     <tr>
-                        <td>姓名</td>
-                        <td><input type = text name = "name" value = "<?php echo $name; ?>" class="form-control"></td>
-                        <!-- <td><font color = red><php echo $SID;?></font></td> -->
+                        <td><input class="form-control" type="text" name="ctime" value="<?php echo $ctime; ?>" required></td>
                     </tr>
                     <tr>
-                        <td>帳號</td>
-                        <td><font color = red><?php echo $account; ?></font></td>
-                        <input type = hidden name = "account" value = "<?php echo $account ?>">
+                        <td><input class="form-control" type="text" name="ctitle" value="<?php echo $ctitle; ?>" required></td>
                     </tr>
                     <tr>
-                        <td>密碼</td>
-                        <td><input type = text name = "password" value = "<?php echo $password; ?>" class="form-control"></td>
+                        <td><textarea class="form-control" name="ctext" cols="30" rows="5" required><?php echo $ctext; ?></textarea></td>
                     </tr>
                     <tr>
-                        <td>權限資格&emsp;</td>
-                        <td>
-                            <select class="form-control" name="membership" id="exampleFormControlSelect1">
-                                <option <?php if($membership=="admin"){echo "selected";} ?>>admin</option>
-                                <option <?php if($membership=="user"){echo "selected";} ?>>user</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input class="btn btn-main" type="submit" name="butt" value="更改資料"></td>
+                        <td><input class="btn btn-main" type="submit" name="butt" value="更新公告"></td>
                     </tr>
                     </table>
                 </form>

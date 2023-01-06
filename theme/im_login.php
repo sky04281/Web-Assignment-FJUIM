@@ -71,7 +71,7 @@
     <div class="row">
       <div style="width:60% ; margin: 30%; margin-top: 0px ; height: auto;margin-left: 33%;  margin-bottom: 0px;">
         <span class="text-color">登入</span>
-        <h3 class="text-md mb-5">請輸入帳號密碼</h3>
+        <h3 class="text-md mb-5">請輸入學號密碼</h3>
 
         <div weight="100%" height="30%">
           <div weight="100%">
@@ -84,7 +84,7 @@
               </div>
 
               <div class="form-group">
-                <input name="account" type="text" class="form-control" placeholder="帳號" required>
+                <input name="account" type="text" class="form-control" placeholder="學號" required>
               </div>
 
               <div class="form-group">

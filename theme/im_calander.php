@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="zxx">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -68,12 +60,10 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="service-info ">
-					<span class="text-color font-weight-bold">09/01</span>
-					<h3 class="text-md mb-4 mt-2">
-						一日資管營
-					</h3>
-					<p>想要認識大學生活或新同學嗎?快點來
-                    </p>
+					<?php
+						$cnum = "01";
+						include("im_calander_link.php");
+					?>
 				</div>
 			</div>
 		</div>
@@ -82,12 +72,10 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="service-info mb-5 mb-lg-0">
-						<span class="text-color font-weight-bold">10/01</span>
-						<h3 class="text-md mb-4 mt-2">
-							制服趴
-						</h3>
-						<p>就是喝酒</p>
-
+						<?php
+							$cnum = "02";
+							include("im_calander_link.php");
+						?>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -106,12 +94,10 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="service-info">
-					<span class="text-color font-weight-bold">11/11</span>
-					<h3 class="text-md mb-4 mt-2">
-						宿營
-					</h3>
-					<p>快點來
-                    </p>
+					<?php
+						$cnum = "03";
+						include("im_calander_link.php");
+					?>
 				</div>
 			</div>
 		</div>
@@ -120,12 +106,10 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="service-info mb-5 mb-lg-0">
-						<span class="text-color font-weight-bold">12/24</span>
-						<h3 class="text-md mb-4 mt-2">
-							拚酒比賽
-						</h3>
-						<p>來，都來喝</p>
-
+						<?php
+							$cnum = "04";
+							include("im_calander_link.php");
+						?>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -144,11 +128,10 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="service-info">
-					<span class="text-color font-weight-bold">01/01</span>
-					<h3 class="text-md mb-4 mt-2">
-						放假
-					</h3>
-					<p>不要來</p>
+					<?php
+						$cnum = "05";
+						include("im_calander_link.php");
+					?>
 				</div>
 			</div>
 		</div>
